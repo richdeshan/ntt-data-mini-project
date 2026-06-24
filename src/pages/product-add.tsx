@@ -85,6 +85,7 @@ export function AddProduct() {
               type="number"
               required
               min="1"
+              step="any"
               value={form.price}
               onChange={(e) => setForm({ ...form, price: e.target.value })}
               placeholder="999"

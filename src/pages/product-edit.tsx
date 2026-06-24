@@ -128,6 +128,7 @@ export function EditProduct() {
             <Input
               type="number"
               required
+              step="any"
               min="1"
               value={form.price}
               onChange={(e) => setForm({ ...form, price: e.target.value })}
