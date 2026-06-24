@@ -3,6 +3,7 @@ import { useProducts } from "@/hooks/use-products";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Package, Layers, Plus, ArrowUpRight, ShoppingBag } from "lucide-react";
+import { useCategories } from "@/hooks/use-categories";
 
 export function ContentApp() {
   const user = useAuthStore((state) => state.user);
@@ -10,6 +11,9 @@ export function ContentApp() {
   
   const { data: productsData, isLoading } = useProducts(1, "");
   const totalProducts = productsData?.total || 0;
+
+  const { data: categoriesData, isLoading: isLoadingCategories } = useCategories();
+  const totalCategories = categoriesData?.length || 0;
 
   return (
     <div className="space-y-6">
@@ -49,7 +53,7 @@ export function ContentApp() {
         <div className="bg-white p-6 rounded-xl border shadow-sm flex items-center justify-between">
           <div className="space-y-1">
             <p className="text-sm font-medium text-muted-foreground">Active Categories</p>
-            <h3 className="text-3xl font-bold text-gray-900">20</h3>
+            <h3 className="text-3xl font-bold text-gray-900">{isLoadingCategories ? "..." : totalCategories}</h3>
           </div>
           <div className="p-3 bg-amber-50 text-amber-600 rounded-lg">
             <Layers className="h-6 w-6" />

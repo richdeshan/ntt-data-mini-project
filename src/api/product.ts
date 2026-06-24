@@ -73,3 +73,18 @@ export async function deleteProduct(id: string) {
     throw error;
   }
 }
+
+export async function getCategories() {
+  try {
+    const response = await fetch(`https://dummyjson.com/products/categories`);
+    
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    
+    return await response.json();
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+}
