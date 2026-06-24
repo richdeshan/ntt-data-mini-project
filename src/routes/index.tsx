@@ -1,12 +1,12 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
-import LoginPage from "@/pages/auth/login";
-import ProtectedRoute from "@/routes/protected-route";
-import App from "@/App";
-import { Products } from "@/pages/products";
-import { ContentApp } from "@/components/layouts/app-content";
-import { ProductDetail } from "@/pages/product-detail";
-import { AddProduct } from "@/pages/product-add";
-import { EditProduct } from "@/pages/product-edit";
+import LoginPage from "../pages/auth/login";
+import ProtectedRoute from "./protected-route";
+import App from "../App";
+import { Products } from "../pages/products";
+import { ContentApp } from "../components/layouts/app-content";
+import { ProductDetail } from "../pages/product-detail";
+import { AddProduct } from "../pages/product-add";
+import { EditProduct } from "../pages/product-edit";
 
 export const router = createBrowserRouter([
   {
