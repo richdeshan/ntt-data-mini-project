@@ -20,7 +20,7 @@ export function NavBar({ user, onLogout }: NavBarProps) {
   const userInitials = `${user.firstName?.charAt(0) || ""}${user.lastName?.charAt(0) || ""}`.toUpperCase();
 
   return (
-    <header className="flex h-16 items-center justify-between border-b px-6 bg-white">
+    <header className="flex h-16 items-center justify-between border-b px-6 bg-white top-0 sticky z-99999">
       <div className="flex items-center gap-4">
         <SidebarTrigger />
         <span className="text-sm font-semibold text-gray-500">Dashboard</span>
@@ -35,7 +35,7 @@ export function NavBar({ user, onLogout }: NavBarProps) {
             </AvatarFallback>
           </Avatar>
         </DropdownMenuTrigger>
-        <DropdownMenuContent align="end" className="w-56 mt-1.5">
+        <DropdownMenuContent align="end" className="w-56 mt-4">
           <DropdownMenuLabel className="font-normal">
             <div className="flex flex-col space-y-1">
               <p className="text-sm font-medium leading-none text-gray-900">
